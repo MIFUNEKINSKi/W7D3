@@ -21,3 +21,9 @@ RSpec.describe User, type: :model do
       User.new(username: "mary_mack", password: "abcdef")
     end
   end
+
+    it { should validate_presence_of(:username) }
+  it { should validate_uniqueness_of(:username) }
+  it { should have_many(:goals) }
+
+end

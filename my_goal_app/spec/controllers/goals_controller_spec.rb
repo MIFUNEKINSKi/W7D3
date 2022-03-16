@@ -7,7 +7,7 @@ RSpec.describe GoalsController, type: :controller do
     allow_message_expectations_on_nil
   end
 
-  describe 'get #new' do
+  describe '#new' do
     context 'when logged in' do
       before do
         allow(controller).to receive(:current_user) { jack }
@@ -32,7 +32,7 @@ RSpec.describe GoalsController, type: :controller do
     end
   end
 
-   describe 'POST #create' do
+   describe 'create' do
     let(:jack_bruce) { User.create!(username: 'jack_bruce', password: 'abcdef') }
 
     context 'when logged out' do

@@ -59,4 +59,13 @@ RSpec.describe GoalsController, type: :controller do
         end
       end
 
- 
+      context 'with valid params' do
+        it 'redirects to the goal show page' do
+          post :create, params: { goal: { title: 'teehee', details: 'cats.com' } }
+          expect(response).to redirect_to(goal_url(Goal.last))
+        end
+      end
+    end
+  end
+
+end  
